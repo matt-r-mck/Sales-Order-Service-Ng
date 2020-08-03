@@ -14,7 +14,8 @@ namespace SalesOrderService.Data
         {
         }
 
-        public DbSet<SalesOrderService.Models.Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder) {
 
