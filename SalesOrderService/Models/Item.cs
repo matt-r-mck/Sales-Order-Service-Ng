@@ -6,24 +6,21 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SalesOrderService.Models {
-    public class Order {
+    public class Item {
 
         public int Id { get; set; }
 
         [Required]
+        public string UPC { get; set; }
+
+        [Required]
         [StringLength(30)]
-        public string Description { get; set; }
+        public string Name { get; set; }
 
         [Column(TypeName = " decimal (12,2)")]
-        public decimal Total { get; set; }
+        public decimal Price { get; set; }
 
-        public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
-
-        public virtual IEnumerable<OrderItem> OrderItems { get; set; }
-
-
-        public Order() {
+        public Item() {
 
         }
 
